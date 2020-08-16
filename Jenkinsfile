@@ -11,11 +11,11 @@ pipeline {
       }
     }
 
-
-    stage('Deploy App') {
-      steps {
-        script {
-          kubernetesDeploy(configs: "deployment.yaml", kubeconfigId: "my-k8")
+   stage("Deploy to Staging"){
+      
+            steps {
+                kubernetesDeploy kubeconfigId: 'my-k8', configs: 'deployment.yaml', enableConfigSubstitution: true  // REPLACE kubeconfigId
+             }
         }
       }
     }
