@@ -14,7 +14,7 @@ pipeline {
    stage("Deploy to Staging"){
       
             steps {
-                kubernetesDeploy kubeconfigId: 'my-k8', configs: 'deployment.yaml', enableConfigSubstitution: true  // REPLACE kubeconfigId
+                kubernetesDeploy kubeconfigId: 'kubeconfig2-k88', configs: 'deployment.yaml', enableConfigSubstitution: true  // REPLACE kubeconfigId
              }
         }
       }
